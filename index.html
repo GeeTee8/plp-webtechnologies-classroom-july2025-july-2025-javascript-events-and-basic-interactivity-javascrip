@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Web Pages with JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Interactive Web Pages with JavaScript</h1>
+        
+        <!-- Part 1: JavaScript Event Handling and Interactive Elements -->
+        <section class="event-section">
+            <h2>⚡ Part 1: JavaScript Event Handling and Interactive Elements</h2>
+            <p>Click, hover, and interact with the elements below to see JavaScript event handling in action!</p>
+            
+            <div class="button-group">
+                <button class="event-btn click-btn" id="clickBtn">Click Me!</button>
+                <button class="event-btn hover-btn" id="hoverBtn">Hover Over Me!</button>
+                <button class="event-btn double-click-btn" id="doubleClickBtn">Double Click Me!</button>
+            </div>
+            
+            <div class="message-display" id="messageDisplay">
+                👋 Welcome! Try interacting with the buttons above to see event handling in action.
+            </div>
+            
+            <div class="toggle-container">
+                <label>Dark Mode Toggle:</label>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="darkModeToggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </section>
+
+        <!-- Part 2: Building Interactive Elements -->
+        <section class="interactive-section">
+            <h2>🎮 Part 2: Building Interactive Elements</h2>
+            
+            <div class="counter-section">
+                <h3>Counter or Button Game</h3>
+                <div class="counter-display" id="counterDisplay">0</div>
+                <div class="button-group">
+                    <button class="event-btn click-btn" onclick="incrementCounter()">➕ Increment</button>
+                    <button class="event-btn hover-btn" onclick="decrementCounter()">➖ Decrement</button>
+                    <button class="event-btn double-click-btn" onclick="resetCounter()">🔄 Reset</button>
+                </div>
+            </div>
+            
+            <div class="faq-section">
+                <h3>Collapsible FAQ Section</h3>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(1)">
+                        What is JavaScript? 🤔
+                    </div>
+                    <div class="faq-answer" id="faq1">
+                        JavaScript is a programming language that enables interactive web pages and is an essential part of web applications.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(2)">
+                        How do events work in JavaScript? ⚡
+                    </div>
+                    <div class="faq-answer" id="faq2">
+                        Events are actions that can be detected by JavaScript, such as clicks, key presses, or mouse movements. Event listeners can be attached to respond to these actions.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(3)">
+                        What is DOM manipulation? 🌐
+                    </div>
+                    <div class="faq-answer" id="faq3">
+                        DOM manipulation involves using JavaScript to dynamically change the structure, style, and content of web pages after they have loaded.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dropdown-section">
+                <h3>Simple Dropdown Menu</h3>
+                <button class="event-btn click-btn" onclick="toggleDropdown()">Toggle Menu 📋</button>
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <p><strong>Menu Options:</strong></p>
+                    <ul>
+                        <li>📝 Create New Document</li>
+                        <li>📂 Open File</li>
+                        <li>💾 Save Document</li>
+                        <li>⚙️ Settings</li>
+                        <li>❓ Help & Support</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="counter-section">
+                <h3>Hidden Interface Toggle</h3>
+                <button class="event-btn click-btn" onclick="toggleHiddenInterface()">🔓 Reveal Secret Interface</button>
+                <div class="hidden-interface" id="hiddenInterface">
+                    <h4>🎉 Secret Developer Interface</h4>
+                    <p>Congratulations! You've unlocked the hidden interface. This demonstrates dynamic content visibility using JavaScript.</p>
+                    <button class="event-btn hover-btn" onclick="showAlert()">Show Alert</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 3: Form Validation with JavaScript -->
+        <section class="form-section">
+            <h2>✅ Part 3: Form Validation with JavaScript</h2>
+            <p>Fill out the form below. JavaScript will validate your input in real-time!</p>
+            
+            <form id="validationForm" onsubmit="submitForm(event)">
+                <div class="form-group">
+                    <label for="fullName">Full Name *</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                    <div class="error-message" id="nameError">Please enter your full name (at least 2 words)</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                    <div class="error-message" id="emailError">Please enter a valid email address</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                    <div class="error-message" id="phoneError">Please enter a valid phone number</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="age">Age *</label>
+                    <input type="number" id="age" name="age" min="13" max="120" required>
+                    <div class="error-message" id="ageError">Age must be between 13 and 120</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password *</label>
+                    <input type="password" id="password" name="password" required>
+                    <div class="error-message" id="passwordError">Password must be at least 8 characters with uppercase, lowercase, and number</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password *</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    <div class="error-message" id="confirmPasswordError">Passwords do not match</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <select id="country" name="country">
+                        <option value="">Select your country</option>
+                        <option value="us">United States</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="ca">Canada</option>
+                        <option value="ng">Nigeria</option>
+                        <option value="au">Australia</option>
+                        <option value="de">Germany</option>
+                        <option value="fr">France</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="comments">Comments or Questions</label>
+                    <textarea id="comments" name="comments" rows="4" placeholder="Tell us about yourself or ask any questions..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">🚀 Submit Form</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
